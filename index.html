@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>M4HDIOUI - Portfolio</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/c5501683da.js" crossorigin="anonymous"></script>
+        <!-- <script src="index.js"></script>
+        <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+        </script>
+        <script type="text/javascript">
+           (function(){
+              emailjs.init("x6FNaqVjxWJEW55IS");
+           })();
+        </script> -->
+    </head>
+    <body>
+        <div id="header">
+            <div class="container">
+                <nav>
+                    <img src="images/logo.png" alt="logo">
+                    <ul id="sidemenu">
+                        <li><a href="#header">home</a></li>
+                        <li><a href="#about">about me</a></li>
+                        <li><a href="#projects">projects</a></li>
+                        <!-- <li><a href="#">Portfolio</a></li> -->
+                        <li><a href="#contact">contact</a></li>
+                        <i class="fa -regular fa-circle-xmark" onclick="closemenu()"></i>
+                    </ul>
+                    <i class="fa -solid fa-bars" id="fa-bars" onclick="openmenu()"></i>
+                </nav>
+                <div class="header-text">
+                    <p>Web Developer</p>
+                    <h1>Hi, i'm <span>Omar Mahdioui</span></h1>
+                    <h2>welcome</h2>
+                </div>
+            </div>
+        </div>
+<!-- about -------------------------------- -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-1">
+                    <img src="images/user.png">
+                </div>
+                <div class="about-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>I am a 21 years old student at 1337 School in Morocco. I am currently learning web development.</p>
+                    <div class="tab-title">
+                        <p class="tab-links active" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li>C (Programming Language)</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>Git</li>
+                            <li>Bash</li>
+                            <li>C++</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2021 - current</span>  1337 School</li>
+                            <li><span>2021</span>  ALX africa</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- ---------------- project----------------------- -->
+<div id="projects">
+    <div class="container">
+        <h1 class="sub-title">My projects</h1>
+        <div class="projects-list">
+            <div>
+                <i class="fa-solid fa-arrow-up-1-9"></i>
+                <h2>Push-Swap</h2>
+                <p>push swap is a project that consists of sorting data on a stack, with a limited set of instructions, using the lowest possible number of actions.</p>
+                <!-- <a href="#">learn more</a> -->
+            </div>
+            <div>
+                <i class="fa-solid fa-code-fork"></i>
+                <h2>Philosophers</h2>
+                <p>philosophers is a project that consists of solving the dining philosophers problem with threads and mutexes.</p>
+                <!-- <a href="#">learn more</a> -->
+            </div>
+            <div>
+                <i class="fa-solid fa-terminal"></i>
+                <h2>MiniShell</h2>
+                <p>minishell is a project that consists of creating a shell with basic functionalities.</p>
+                <!-- <a href="#">learn more</a> -->
+            </div>
+            <div>
+                <i class="fa-solid fa-gamepad"></i>
+                <h2>Cub3D</h2>
+                <p>cub3d is a project that consists of creating a 3D game using raycasting.</p>
+                <!-- <a href="#">learn more</a> -->
+            </div>
+            <div>
+                <i class="fa-solid fa-network-wired"></i>
+                <h2>NetPractice</h2>
+                <p>netpractice is a project that consists of creating a server and a client that can communicate with each other.</p>
+                <!-- <a href="#">learn more</a> -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- contact--------------------- -->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact me</h1>
+                <p><i class="fa-solid fa-envelope"></i>mahdiouiomar@gmail.com</p>
+                <P><i class="fa-solid fa-phone"></i>06 97 87 56 97</P>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/omar-mahdioui-03611a279/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/M4HDIOUI"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://x.com/M4HDIOUI"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" id="name" placeholder="Your Name" required>
+                    <input type="email" name="Email" id="email" placeholder="Your Email" required>
+                    <textarea name="Message" id="message" placeholder="Your Message" rows="6"></textarea>
+                    <button type="submit" class="btn btn2" onclick="sendMail()">send</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyrights">
+        <p>© 2023 Omar Mahdioui. All rights reserved.</p>
+    </div>
+</div>
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname) {
+        for (var tablink of tablinks) {
+            tablink.classList.remove("active");
+        }
+        for (var tabcontent of tabcontents) {
+            tabcontent.classList.remove("active-tab");
+        }
+
+        event.currentTarget.classList.add("active");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+
+<script>
+    var sidemenus = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenus.style.right = "0";
+    }
+
+    function closemenu(){
+        sidemenus.style.right = "-200px";
+    }
+
+</script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzrN8otdVRfcS5f4oGF6306bxTrZN4sPVR5oVhZNImpYEsC1GiZiie9kq2sqZaI_AUhvA/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+</script>
+
+</body>
+</html>
